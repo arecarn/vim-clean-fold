@@ -15,24 +15,6 @@ else
 endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 
-" GLOBALS {{{
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:fold_debug = get(g:, 'fold_debug', 0)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
-
-" MAPPINGS {{{
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <script> <Plug>(fold-open) :<C-u>call fold#open()<CR>
-if !hasmapto('<Plug>(fold-open)')
-    nmap <expr><unique><CR> expand('%') ==# "[Command Line]" ? "\<CR>" : "<Plug>(fold-open)"
-endif
-
-nnoremap <silent> <script> <Plug>(fold-close) :<C-u>call fold#close()<CR>
-if !hasmapto('<Plug>(fold-close)')
-    nmap <unique> <BS> <Plug>(fold-close)
-endif
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
-
 " BOILER PLATE {{{
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let &cpo = s:save_cpo
