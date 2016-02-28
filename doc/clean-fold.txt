@@ -1,26 +1,26 @@
-*clean-fold*                  Clean way seeing folds
+*clean-fold* clean way seeing folds
 
-                        Clean Fold    By Ryan Carney~
+                                  clean-fold~
 
-                                                              *clean-fold.txt*
+Description ........................................... |clean-fold-description|
+Usage ....................................................... |clean-fold-usage|
+    Functions ........................................... |clean-fold-functions|
 
-Description ......................................... |clean-fold-description|
-Usage ............................................... |clean-fold-usage|
-
-==============================================================================
-DESCRIPTION                                          *clean-fold-description*
-
-This plugin provides alternatives to the default foldtext, that clean up the
-appearance of folds.  Finally this plugin provides a new fold expression that
-is an alternative to Vims standard indent method of folding.
+                                                                *clean-fold.txt*
 
 ==============================================================================
-USAGE                                                     *clean-fold-usage*
+DESCRIPTION                                             *clean-fold-description*
+
+|clean-fold| provides alternatives to the default foldtext cleans up the
+appearance of folds. This plugin also provides a new fold expression that is
+an alternative to the built-in indent method of folding, that includes the
+line before the indent as well as the following indented lines.
+
+==============================================================================
+USAGE                                                         *clean-fold-usage*
 
 ------------------------------------------------------------------------------
-FOLD TEXT STYLE~
-
-Alternatives to the default |foldtext| and a new |foldmethod|
+FUNCTIONS                                                 *clean-fold-functions*
 
 clean_fold#fold_text({foldchar})
                 Cleaner alternative to default fold text that includes the text
@@ -39,15 +39,12 @@ clean_fold#cleanest_fold_text()
                 Usage: >
                         set foldtext=clean_fold#fold_text_minimal()
 
-------------------------------------------------------------------------------
-FOLD EXPRESSION~
-
-A new |foldexpr| set up so lines that are at the same indented level are
-folded along with the first line above them one indent level up. This fold
-expr was taken with basically no modification from Steve Losh's Learn
-Vimscript the Hard way's section on folding.
 
 clean_fold#fold_expr({lnum})
+                A new |foldexpr| set up so lines that are at the same indented level are
+                folded along with the first line above them one indent level up. This fold
+                expr was taken with basically no modification from Steve Losh's Learn
+                Vimscript the Hard way's section on folding.
                 Like indent folding but also include first line that is one
                 indent level lower
 
@@ -65,6 +62,5 @@ clean_fold#fold_expr({lnum})
                             part of fold 2
                             end of fold 2
 <
-
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:fdm=manual:
